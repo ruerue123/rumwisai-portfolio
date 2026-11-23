@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  section[id] { scroll-margin-top: 4rem; }
+  ::selection { background: #007487; color: #F7F6F2; }
+  :focus-visible {
+    outline: 2px solid #007487;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .on-dark :focus-visible { outline-color: #35B5C8; }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[0.7rem] font-medium uppercase tracking-[0.18em] text-mute;
+  }
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover, .link-underline:focus-visible { background-size: 100% 1px; }
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.spin-slow { animation: spin-slow 60s linear infinite; }
+.pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow, .pulse-ring { animation: none; }
+}
