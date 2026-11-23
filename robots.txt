@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://ruerue123.github.io/rumwisai-portfolio
+Sitemap: https://ruerue123.github.io/rumwisai-portfolio/sitemap.xml
