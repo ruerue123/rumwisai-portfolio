@@ -36,7 +36,7 @@ function Portrait() {
             fill
             priority
             sizes="(min-width: 1024px) 34vw, 80vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
         ) : (
           <div className="absolute inset-0 flex flex-col justify-between p-5" role="img" aria-label="Portrait placeholder">

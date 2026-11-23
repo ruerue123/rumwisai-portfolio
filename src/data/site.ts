@@ -15,7 +15,7 @@ export const site = {
    * and set this to "/portrait.jpg". While undefined, a typographic
    * placeholder is shown instead.
    */
-  portrait: undefined as string | undefined,
+  portrait: "/portrait.jpg" as string | undefined,
 } as const;
 
 export const navLinks = [
